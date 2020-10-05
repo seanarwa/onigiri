@@ -1,0 +1,40 @@
+name: onigiri
+description: Order onigiri
+version: 1.0.0+1
+
+# Remove this line if you wish to publish to pub.dev
+publish_to: 'none'
+
+environment:
+  sdk: ">=2.7.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  # Firebase plugins
+  firebase_core: ^0.5.0
+  firebase_auth: ^0.18.1+1
+  firebase_auth_web: ^0.3.1
+  firebase_database: ^4.1.0
+
+  # Google plugins
+  google_sign_in: ^4.0.7
+
+  # UI enhancements
+  flutter_auth_buttons: ^0.10.0
+  cached_network_image: ^2.0.0
+
+  # iOS style icons
+  cupertino_icons: ^1.0.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+
+  uses-material-design: true
+
+  assets:
+    - images/
