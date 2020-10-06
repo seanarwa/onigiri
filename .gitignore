@@ -56,5 +56,4 @@ yarn.lock
 *.iml
 *.tgz
 scripts/*.json
-lib/
 dev/
