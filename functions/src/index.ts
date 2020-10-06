@@ -1,9 +1,22 @@
 import * as functions from 'firebase-functions';
+import * as admin from 'firebase-admin';
 
-// // Start writing Firebase Functions
-// // https://firebase.google.com/docs/functions/typescript
-//
-// export const helloWorld = functions.https.onRequest((request, response) => {
-//   functions.logger.info("Hello logs!", {structuredData: true});
-//   response.send("Hello from Firebase!");
-// });
+admin.initializeApp();
+
+export const onUserCreate = functions.firestore.document('user/{userId}').onCreate((snapshot, context) => {
+    snapshot.ref.update({
+        "createdAt": admin.firestore.FieldValue.serverTimestamp(),
+    });
+});
+
+export const onOrderCreate = functions.firestore.document('order/{orderId}').onCreate((snapshot, context) => {
+    snapshot.ref.update({
+        "createdAt": admin.firestore.FieldValue.serverTimestamp(),
+    });
+});
+
+export const onItemCreate = functions.firestore.document('item/{itemId}').onCreate((snapshot, context) => {
+    snapshot.ref.update({
+        "createdAt": admin.firestore.FieldValue.serverTimestamp(),
+    });
+});

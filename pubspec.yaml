@@ -23,6 +23,7 @@ dependencies:
   # UI enhancements
   flutter_auth_buttons: ^0.10.0
   cached_network_image: ^2.0.0
+  flutter_masked_text: ^0.8.0
 
   # iOS style icons
   cupertino_icons: ^1.0.0

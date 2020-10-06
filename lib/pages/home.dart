@@ -15,7 +15,6 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   List<Order> _userOrders = [];
 
   @override
@@ -50,49 +49,57 @@ class _HomePageState extends State<HomePage> {
           onPressed: () {
             Navigator.of(context).pushNamed(AddOrderPage.routeName);
           },
-        )
+        ),
+        SizedBox(width: 20.0),
+        FlatButton.icon(
+          textColor: Colors.blue,
+          icon: Icon(Icons.add),
+          label: Text("Add item"),
+          onPressed: () {
+            Navigator.of(context).pushNamed(AddItemPage.routeName);
+          },
+        ),
       ],
     );
   }
 
   Widget _renderUserOrders() {
-    
     _userOrders = [
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
+      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
     ];
 
     return Card(
@@ -122,7 +129,6 @@ class _HomePageState extends State<HomePage> {
 
   @override
   Widget build(BuildContext context) {
-
     double screenWidth = MediaQuery.of(context).size.width;
 
     return Scaffold(

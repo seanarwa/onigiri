@@ -18,6 +18,16 @@ class UserAPI {
     }
   }
 
+  static Future<User> add(User user) async {
+    try {
+      DocumentReference ref = await _ref.add(user.toMap(withId: false));
+      user.id = ref.id;
+      return user;
+    } catch (e) {
+      throw "Firebase User API failed to add document to [Default]/user: $e";
+    }
+  }
+
   static Future<void> set(User user) async {
     try {
       await _ref.doc(user.id).set(user.toMap(withId: false));

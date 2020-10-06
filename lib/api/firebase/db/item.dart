@@ -18,6 +18,16 @@ class ItemAPI {
     }
   }
 
+  static Future<Item> add(Item item) async {
+    try {
+      DocumentReference ref = await _ref.add(item.toMap(withId: false));
+      item.id = ref.id;
+      return item;
+    } catch (e) {
+      throw "Firebase Item API failed to add document to [Default]/item: $e";
+    }
+  }
+
   static Future<void> set(Item item) async {
     try {
       await _ref.doc(item.id).set(item.toMap(withId: false));

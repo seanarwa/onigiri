@@ -18,6 +18,16 @@ class OrderAPI {
     }
   }
 
+  static Future<Order> add(Order order) async {
+    try {
+      DocumentReference ref = await _ref.add(order.toMap(withId: false));
+      order.id = ref.id;
+      return order;
+    } catch (e) {
+      throw "Firebase Order API failed to add document to [Default]/order: $e";
+    }
+  }
+
   static Future<void> set(Order order) async {
     try {
       await _ref.doc(order.id).set(order.toMap(withId: false));
