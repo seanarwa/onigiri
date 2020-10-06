@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:onigiri/auth.dart';
+import 'package:onigiri/api/firebase/auth.dart';
 import 'package:onigiri/pages/index.dart';
 
 class HomePage extends StatefulWidget {

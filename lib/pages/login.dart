@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_auth_buttons/flutter_auth_buttons.dart';
-import 'package:onigiri/auth.dart';
+import 'package:onigiri/api/firebase/auth.dart';
 import 'package:onigiri/pages/home.dart';
 
 class LoginPage extends StatefulWidget {
