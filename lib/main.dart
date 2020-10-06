@@ -19,6 +19,10 @@ class App extends StatelessWidget {
       routes: {
         '/': (BuildContext context) => HomePage(),
         '/login': (BuildContext context) => LoginPage(),
+        '/item': (BuildContext context) => ItemPage(),
+        '/item/add': (BuildContext context) => AddItemPage(),
+        '/order': (BuildContext context) => OrderPage(),
+        '/order/add': (BuildContext context) => AddOrderPage(),
       },
     );
   }

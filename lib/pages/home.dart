@@ -48,7 +48,7 @@ class _HomePageState extends State<HomePage> {
           icon: Icon(Icons.add),
           label: Text("Add order"),
           onPressed: () {
-            print("pressed");
+            Navigator.of(context).pushNamed(AddOrderPage.routeName);
           },
         )
       ],
