@@ -33,7 +33,7 @@
 
 # Web related
 lib/generated_plugin_registrant.dart
-web/initializeFirebase.js
+web/initFirebase.js
 
 # Symbolication related
 app.*.symbols

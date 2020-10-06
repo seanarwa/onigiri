@@ -15,11 +15,10 @@ dependencies:
   # Firebase plugins
   firebase_core: ^0.5.0
   firebase_auth: ^0.18.1+1
-  firebase_auth_web: ^0.3.1
   firebase_database: ^4.1.0
 
   # Google plugins
-  google_sign_in: ^4.0.7
+  google_sign_in: ^4.5.3
 
   # UI enhancements
   flutter_auth_buttons: ^0.10.0
