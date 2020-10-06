@@ -1,39 +1,37 @@
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
+import 'package:onigiri/api/firebase/db/user.dart';
 import 'package:onigiri/models/index.dart' as Models;
 
 class Auth {
   static final GoogleSignIn _googleSignIn = GoogleSignIn();
   static final FirebaseAuth _auth = FirebaseAuth.instance;
-  static final FirebaseFirestore _db = FirebaseFirestore.instance;
-  static final CollectionReference _userRef = _db.collection('user');
 
   static Future<void> _checkUserInDB() async {
-    User user = getUser();
-    DocumentSnapshot snapshot = await _userRef.doc(user.uid).get();
-    if (snapshot.data() == null) {
+    User firebaseUser = getFirebaseUser();
+    Models.User user = await UserAPI.get(firebaseUser.uid);
+    if (user == null) {
       print("New user detected. Pushing new user to db ...");
-      _pushUserToDB(user);
+      await _pushUserToDB(firebaseUser);
     }
   }
 
-  static void _pushUserToDB(User user) {
+  static Future<void> _pushUserToDB(User firebaseUser) {
     Models.User newUser = Models.User(
-      id: user.uid,
-      displayName: user.displayName,
-      email: user.email,
-      photoUrl: user.photoURL,
+      id: firebaseUser.uid,
+      displayName: firebaseUser.displayName,
+      email: firebaseUser.email,
+      photoUrl: firebaseUser.photoURL,
     );
-    _userRef.doc(newUser.id).set(newUser.toMap(withId: false));
+    return UserAPI.set(newUser);
   }
 
-  static User getUser() {
+  static User getFirebaseUser() {
     return _auth.currentUser;
   }
 
   static bool isSignedIn() {
-    return (getUser() != null);
+    return (getFirebaseUser() != null);
   }
 
   static Stream<User> authState() {
@@ -50,12 +48,13 @@ class Auth {
       idToken: googleAuth.idToken,
     );
 
-    final User user = (await _auth.signInWithCredential(credential)).user;
-    print("Signed in user: ${user.displayName} (${user.uid})");
+    final User firebaseUser =
+        (await _auth.signInWithCredential(credential)).user;
+    print("Signed in user: ${firebaseUser.displayName} (${firebaseUser.uid})");
 
-    _checkUserInDB();
+    await _checkUserInDB();
 
-    return user;
+    return firebaseUser;
   }
 
   static Future<void> signOut() {
