@@ -64,44 +64,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   Widget _renderUserOrders() {
-    _userOrders = [
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-      Order(id: "12-1nf-91b39g1", createdAt: 1601964436000),
-    ];
-
     return Card(
       elevation: 8.0,
       shape: RoundedRectangleBorder(
@@ -115,7 +77,7 @@ class _HomePageState extends State<HomePage> {
               children: [
                 ListTile(
                   leading: Icon(Icons.attach_money),
-                  title: Text(TimeFormat.fromEpoch(order.createdAt)),
+                  title: Text(TimeFormat.fromTimestamp(order.createdAt)),
                   trailing: Icon(Icons.keyboard_arrow_right),
                 ),
                 Divider(),

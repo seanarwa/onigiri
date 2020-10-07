@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:onigiri/models/index.dart';
 
 class Order {
   String id;
-  int createdAt;
-  int updatedAt;
+  Timestamp createdAt;
+  Timestamp updatedAt;
   Map<Item, int> items;
 
   Order({
-    @required this.id,
+    this.id,
     this.createdAt,
     this.updatedAt,
     this.items,
@@ -24,8 +24,8 @@ class Order {
 
   Order.fromMap(Map<String, dynamic> map) {
     this.id = map["id"] as String;
-    this.createdAt = map["createdAt"] as int;
-    this.updatedAt = map["updatedAt"] as int;
+    this.createdAt = map["createdAt"] as Timestamp;
+    this.updatedAt = map["updatedAt"] as Timestamp;
     this.items = map["items"] as Map<Item, int>;
   }
 

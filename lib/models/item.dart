@@ -1,14 +1,14 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Item {
   String id;
-  int createdAt;
-  int updatedAt;
+  Timestamp createdAt;
+  Timestamp updatedAt;
   String name;
   int price; // price in cents
 
   Item({
-    @required this.id,
+    this.id,
     this.createdAt,
     this.updatedAt,
     this.name,
@@ -17,8 +17,8 @@ class Item {
 
   Item.fromMap(Map<String, dynamic> map) {
     this.id = map["id"] as String;
-    this.createdAt = map["createdAt"] as int;
-    this.updatedAt = map["updatedAt"] as int;
+    this.createdAt = map["createdAt"] as Timestamp;
+    this.updatedAt = map["updatedAt"] as Timestamp;
     this.name = map["name"] as String;
     this.price = map["price"] as int;
   }

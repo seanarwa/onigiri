@@ -21,10 +21,11 @@ class _AddItemPageState extends State<AddItemPage> {
     thousandSeparator: ',',
   );
   Item _item = Item(
+    id: "ITEM_ID",
     name: "",
     price: 0,
   );
-  bool _isLoading = false;
+  bool _isSubmitting = false;
 
   Widget _renderHeader() {
     return Row(
@@ -90,10 +91,10 @@ class _AddItemPageState extends State<AddItemPage> {
                   textColor: Colors.white,
                   child: Text("Submit"),
                   onPressed: () async {
-                    if (_isLoading) return;
+                    if (_isSubmitting) return;
                     if (_formKey.currentState.validate()) {
                       setState(() {
-                        _isLoading = true;
+                        _isSubmitting = true;
                       });
                       _formKey.currentState.save();
                       await ItemAPI.add(_item);

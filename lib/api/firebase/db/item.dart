@@ -18,6 +18,21 @@ class ItemAPI {
     }
   }
 
+  static Future<List<Item>> getAll() async {
+    try {
+      QuerySnapshot snapshot = await _ref.get();
+      List<Item> result = [];
+      for (QueryDocumentSnapshot doc in snapshot.docs) {
+        Map<String, dynamic> dataMap = doc.data();
+        dataMap["id"] = doc.id;
+        result.add(Item.fromMap(dataMap));
+      }
+      return result;
+    } catch (e) {
+      throw "Firebase Item API failed to get all documents from [Default]/item: $e";
+    }
+  }
+
   static Future<Item> add(Item item) async {
     try {
       DocumentReference ref = await _ref.add(item.toMap(withId: false));

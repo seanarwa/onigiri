@@ -1,15 +1,15 @@
-import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class User {
   String id;
-  int createdAt;
-  int updatedAt;
+  Timestamp createdAt;
+  Timestamp updatedAt;
   String displayName;
   String email;
   String photoUrl;
 
   User({
-    @required this.id,
+    this.id,
     this.createdAt,
     this.updatedAt,
     this.displayName,
@@ -19,8 +19,8 @@ class User {
 
   User.fromMap(Map<String, dynamic> map) {
     this.id = map["id"] as String;
-    this.createdAt = map["createdAt"] as int;
-    this.updatedAt = map["updatedAt"] as int;
+    this.createdAt = map["createdAt"] as Timestamp;
+    this.updatedAt = map["updatedAt"] as Timestamp;
     this.displayName = map["displayName"] as String;
     this.email = map["email"] as String;
     this.photoUrl = map["photoUrl"] as String;
