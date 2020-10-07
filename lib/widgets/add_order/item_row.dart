@@ -63,7 +63,7 @@ class _ItemRowState extends State<ItemRow> {
             }
             return result;
           },
-          // itemAsString: (Item item) => item.name,
+          itemAsString: (Item item) => item.name,
           onChanged: _onChanged,
         ),
       ],
